@@ -1,0 +1,9 @@
+[submodule "funcionario-microservice"]
+	path = funcionario-microservice
+	url = git@github.com:black-atom/funcionario-microservice.git
+[submodule "atendimento-microservice"]
+	path = atendimento-microservice
+	url = https://github.com/black-atom/atendimento-microservice
+[submodule "cliente-microservice"]
+	path = cliente-microservice
+	url = git@github.com:black-atom/cliente-microservice.git

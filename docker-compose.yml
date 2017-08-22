@@ -1,0 +1,27 @@
+version: '2.1'
+
+services:
+  atendimento-microservice:
+    build: ./atendimento-microservice
+    expose:
+      - "3000"
+    # environment:
+
+  cliente-microservice:
+    build: ./cliente-microservice
+    expose:
+      - "3000"
+
+  funcionario-microservice:
+    build: ./funcionario-microservice
+    expose:
+      - "3000"
+
+  nginx:
+    build: ./nginx
+    links:
+      - atendimento-microservice
+      - cliente-microservice
+      - funcionario-microservice
+    ports:
+    - "3000:80"
