@@ -14,6 +14,8 @@ It is important to mention that your databse must be listening in the same netwo
 ```
     git clone https://github.com/black-atom/microservices-deployment.git
     cd microservices-deployment
+    git submodule update --init --recursive
+    git submodule foreach git pull origin master
     docker-compose up -d 
     docker ps - to check whether it is running or not
 ```
