@@ -30,9 +30,12 @@ By Default, all the endpoints are secured. To make a request you need to pass a 
 ```
 
 ## Endpoints
-* /api/clientes
-* /api/funcionarios
-* /api/atendimentos
+* GET POST DELETE PUT /api/clientes
+* GET POST DELETE PUT /api/funcionarios
+* POST /login
+* GET POST DELETE PUT /api/atendimentos
+* POST /atendimentos/:id/imagens
+
 
 ## Websockets
 ip:3000
