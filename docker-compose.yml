@@ -5,17 +5,22 @@ services:
     build: ./atendimento-microservice
     expose:
       - "3000"
-    # environment:
+    environment:
+    - NODE_ENV=test
 
   cliente-microservice:
     build: ./cliente-microservice
     expose:
       - "3000"
+    environment:
+    - NODE_ENV=test
 
   funcionario-microservice:
     build: ./funcionario-microservice
     expose:
       - "3000"
+    environment:
+    - NODE_ENV=test
 
   nginx:
     build: ./nginx

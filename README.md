@@ -9,6 +9,8 @@ It is important to mention that your databse must be listening in the same netwo
 * vi /etc/mongod.conf
 * search for bindIp
 * add 172.17.0.1 to the list of ips to bind
+* firewall-cmd --permanent --zone=public --add-port=27017/tcp
+* systemctl restart firewalld.service
 
 ## Run
 ```
