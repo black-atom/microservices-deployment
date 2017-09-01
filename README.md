@@ -21,6 +21,13 @@ It is important to mention that your databse must be listening in the same netwo
     docker-compose up -d 
     docker ps - to check whether it is running or not
 ```
+
+## Update
+```
+    git submodule foreach git pull origin master
+    docker-compose up --force-recreate  --build -d
+```
+
 ## Security
 By Default, all the endpoints are secured. To make a request you need to pass a token
 * POST ip:3000/login passing the following object
