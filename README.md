@@ -25,7 +25,7 @@ It is important to mention that your databse must be listening in the same netwo
 ## Update
 ```
     git submodule foreach git pull origin master
-    docker-compose up --force-recreate  --build -d
+    docker-compose up --force-recreate  --build -ds
 ```
 
 ## Security
