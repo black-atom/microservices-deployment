@@ -6,21 +6,25 @@ services:
     expose:
       - "3000"
     environment:
-    - NODE_ENV=test
+      - NODE_ENV=test
+    volumes:
+      - type: volume
+        source: /home/vlima/images
+        target: /usr/src/app/public/imagens
 
   cliente-microservice:
     build: ./cliente-microservice
     expose:
       - "3000"
     environment:
-    - NODE_ENV=test
+      - NODE_ENV=test
 
   funcionario-microservice:
     build: ./funcionario-microservice
     expose:
       - "3000"
     environment:
-    - NODE_ENV=test
+      - NODE_ENV=test
 
   nginx:
     build: ./nginx
@@ -29,4 +33,6 @@ services:
       - cliente-microservice
       - funcionario-microservice
     ports:
-    - "3000:80"
+      - "3000:80"
+  volumes:
+    - /home/vlima/images
