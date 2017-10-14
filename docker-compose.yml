@@ -8,9 +8,7 @@ services:
     environment:
       - NODE_ENV=test
     volumes:
-      - type: volume
-        source: /home/vlima/images
-        target: /usr/src/app/public/imagens
+       - /images:/usr/src/app/public/imagens
 
   cliente-microservice:
     build: ./cliente-microservice
@@ -34,5 +32,3 @@ services:
       - funcionario-microservice
     ports:
       - "3000:80"
-  volumes:
-    - /home/vlima/images
