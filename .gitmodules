@@ -7,3 +7,6 @@
 [submodule "cliente-microservice"]
 	path = cliente-microservice
 	url = git@github.com:black-atom/cliente-microservice.git
+[submodule "log-microservice"]
+	path = log-microservice
+	url = https://github.com/black-atom/log-microservice.git

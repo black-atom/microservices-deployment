@@ -6,7 +6,7 @@ services:
     expose:
       - "3000"
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=production
     volumes:
        - /images:/usr/src/app/public/imagens
 
@@ -15,14 +15,21 @@ services:
     expose:
       - "3000"
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=production
 
   funcionario-microservice:
     build: ./funcionario-microservice
     expose:
       - "3000"
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=production
+
+  log-microservice:
+    build: ./log-microservice
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
 
   nginx:
     build: ./nginx
@@ -30,5 +37,6 @@ services:
       - atendimento-microservice
       - cliente-microservice
       - funcionario-microservice
+      - log-microservice
     ports:
       - "3000:80"
