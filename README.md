@@ -22,6 +22,11 @@ It is important to mention that your databse must be listening in the same netwo
     docker ps - to check whether it is running or not
 ```
 
+## Run Test
+```
+  docker-compose -f docker-compose.test.yml up
+```
+
 ## Update
 ```
     git submodule foreach git pull origin master

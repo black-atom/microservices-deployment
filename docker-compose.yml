@@ -1,12 +1,25 @@
 version: '2.1'
 
 services:
+  funcionario-microservice:
+    build: ./funcionario-microservice
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - AUTH_API_HOST=localhost
+      - AUTH_API_PORT=3000
+
   atendimento-microservice:
     build: ./atendimento-microservice
     expose:
       - "3000"
     environment:
       - NODE_ENV=production
+      - AUTH_API_HOST=funcionario-microservice
+      - AUTH_API_PORT=3000
+    links:
+      - funcionario-microservice
     volumes:
        - /images:/usr/src/app/public/imagens
 
@@ -16,13 +29,10 @@ services:
       - "3000"
     environment:
       - NODE_ENV=production
-
-  funcionario-microservice:
-    build: ./funcionario-microservice
-    expose:
-      - "3000"
-    environment:
-      - NODE_ENV=production
+      - AUTH_API_HOST=funcionario-microservice
+      - AUTH_API_PORT=3000
+    links:
+      - funcionario-microservice
 
   log-microservice:
     build: ./log-microservice
@@ -30,6 +40,10 @@ services:
       - "3000"
     environment:
       - NODE_ENV=production
+      - AUTH_API_HOST=funcionario-microservice
+      - AUTH_API_PORT=3000
+    links:
+      - funcionario-microservice
 
   nginx:
     build: ./nginx
